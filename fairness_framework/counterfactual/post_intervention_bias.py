@@ -13,6 +13,7 @@ from fairness_framework.counterfactual.gender_classifier import (
     analyze_gender_directions
 )
 from .manipulation import flip_embeddings_along_gender_direction
+from fairness_framework.utils.config import Config
 import logging
 
 # Set up logging
@@ -21,10 +22,9 @@ logger = logging.getLogger(__name__)
 
 
 def run_counterfactual_bias_analysis(
-        resume_embeddings,
-        gender_mapping,
-        run_bias_analysis_jobs_to_resumes_func,
-        run_bias_analysis_resumes_to_jobs_func=None
+    gender_mapping,
+    run_bias_analysis_jobs_to_resumes_func,
+    run_bias_analysis_resumes_to_jobs_func=None
 ) -> Dict:
     """
     Executes the full counterfactual gender bias analysis pipeline:
@@ -34,7 +34,6 @@ def run_counterfactual_bias_analysis(
     4. Reruns bias analysis on flipped embeddings
 
     Args:
-        resume_embeddings (np.ndarray): Resume embeddings array
         gender_mapping (dict): Mapping of resume IDs to gender labels
         run_bias_analysis_jobs_to_resumes_func (callable): Function to run jobs->resumes bias analysis
         run_bias_analysis_resumes_to_jobs_func (callable, optional): Function to run resumes->jobs bias analysis
@@ -43,7 +42,8 @@ def run_counterfactual_bias_analysis(
         dict: Complete counterfactual analysis results
     """
     print("Counterfactual gender analysis results")
-
+    from ..data.data_loader import load_bias_analysis_embeddings
+    job_embeddings, resume_embeddings = load_bias_analysis_embeddings()
     # Extract labeled data
     resume_ids_with_gender = []
     resume_indices_with_gender = []
@@ -87,7 +87,7 @@ def run_counterfactual_bias_analysis(
         "flip_results": {}
     }
 
-    flip_factors = [0.25, 0.5, 0.75, 1.0]
+    flip_factors = Config.FLIP_FACTORS
 
     for factor in flip_factors:
         print(f"Testing counterfactual embeddings (flip_factor = {factor})")
@@ -107,7 +107,7 @@ def run_counterfactual_bias_analysis(
             resume_embeddings[:] = modified_embeddings
 
             print("  Re-run jobs to resume analysis")
-            jobs_to_resumes_result = run_bias_analysis_jobs_to_resumes_func()
+            jobs_to_resumes_result = run_bias_analysis_jobs_to_resumes_func(modified_embeddings)
 
             if run_bias_analysis_resumes_to_jobs_func is not None:
                 print("  Re-run resume to jobs analysis")

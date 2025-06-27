@@ -1,11 +1,11 @@
 """
 Fairness-aware job-matching framework.
+A comprehensive toolkit for detecting and mitigating bias in job-matching systems.
 """
 
 __version__ = "1.0.0"
 
-from counterfactual.gender_classifier import train_gender_classifier_with_teacher_params, analyze_gender_directions, \
-    comprehensive_gender_classifier_analysis
+# Core configuration
 from .utils.config import Config, ModelConfig
 
 # Data loading
@@ -41,7 +41,7 @@ from .bias_analysis.validation import (
 from .counterfactual.gender_classifier import (
     train_gender_classifier_with_teacher_params,
     analyze_gender_directions,
-    comprehensive_gender_classifier_analysis
+    comprehensive_gender_classifier_analysis,
 )
 
 from .counterfactual.manipulation import (

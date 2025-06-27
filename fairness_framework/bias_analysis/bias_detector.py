@@ -442,14 +442,11 @@ def analyze_embedding_geometry(embeddings, gender_mapping, corpus_ids):
     return geometry_analysis
 
 
-def run_bias_analysis(job_embeddings, resume_embeddings, test_job_queries,
-                      gender_mapping, resume_corpus_ids, create_faiss_index, search_faiss):
+def run_bias_analysis(test_job_queries, gender_mapping, resume_corpus_ids, create_faiss_index, search_faiss, modified_cv_embeddings=None):
     """
-    Run comprehensive bias analysis for jobs searching resumes.
+    Run comprehensive bias analysis for jobs searching resumes using correct embeddings.
 
     Args:
-        job_embeddings (np.ndarray): Job embedding matrix
-        resume_embeddings (np.ndarray): Resume embedding matrix
         test_job_queries (list): List of test job query dictionaries
         gender_mapping (dict): Mapping of resume IDs to gender labels
         resume_corpus_ids (list): List of resume corpus IDs
@@ -460,6 +457,18 @@ def run_bias_analysis(job_embeddings, resume_embeddings, test_job_queries,
         dict: Complete bias analysis results
     """
     logger.info("Bias analysis: Jobs searching for Resumes")
+
+    # Load embeddings or use provided modified ones
+    if modified_cv_embeddings is not None:
+        resume_embeddings = modified_cv_embeddings
+        from fairness_framework.data.data_loader import load_bias_analysis_embeddings
+        job_embeddings, _ = load_bias_analysis_embeddings()  # Only load job embeddings
+    else:
+        from fairness_framework.data.data_loader import load_bias_analysis_embeddings
+        job_embeddings, resume_embeddings = load_bias_analysis_embeddings()
+
+    logger.info(f"Loaded job query embeddings: {job_embeddings.shape}")
+    logger.info(f"Loaded CV passage embeddings: {resume_embeddings.shape}")
 
     # Extract test job query indices from job IDs
     test_job_indices = []
