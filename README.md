@@ -7,7 +7,7 @@ A comprehensive framework detecting bias and enhancing fairness in job-matching 
 This framework provides a complete pipeline for analyzing and addressing gender bias in job-matching systems. The implementation demonstrates two components: gender inference modeling, and bias analysis with counterfactual manipulation. This work was developed as part of a Master's thesis investigating fairness in AI-powered recruitment systems.
 
 ## Framework Architecture
-![Framework Architecture](assets/framework_architecture.png)
+![Framework Architecture](assets/Framework_Diagram.png)
 
 The framework consists of three main components:
 
