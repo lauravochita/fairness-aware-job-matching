@@ -9,8 +9,6 @@ This framework provides a complete pipeline for analyzing and addressing gender 
 ## Framework Architecture
 ![Framework Architecture](assets/Framework_Diagram.png)
 
-The framework consists of three main components:
-
 The framework consists of two main components:
 
 ### Component 1: Gender Inference Models
