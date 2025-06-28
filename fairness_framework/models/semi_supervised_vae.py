@@ -215,7 +215,7 @@ def train_semi_supervised_vae_improved(model, train_data, train_labels, test_dat
     # Scheduler with more patience
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, mode='min', factor=0.5, patience=10,
-        min_lr=1e-6, verbose=False
+        min_lr=1e-6
     )
 
     train_losses = []

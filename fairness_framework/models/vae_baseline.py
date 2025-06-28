@@ -173,7 +173,7 @@ def train_baseline_vae(train_data, train_labels, test_data, test_labels,
     )
 
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.5, patience=10, min_lr=1e-6, verbose=False
+        optimizer, mode='min', factor=0.5, patience=10, min_lr=1e-6
     )
 
     train_losses = []
