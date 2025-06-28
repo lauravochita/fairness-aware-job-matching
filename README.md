@@ -242,9 +242,9 @@ GitHub: https://github.com/lauravochita/fairness-aware-job-matching
 
 ## Contact
 
-Laura Vochita  
+Laura Vochita 
+E-mail: laura.vochita@student.uva.nl 
 GitHub: [@lauravochita](https://github.com/lauravochita)
-E-mail: laura.vochita@student.uva.nl
 
 
 ## License
