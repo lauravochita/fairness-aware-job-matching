@@ -1,0 +1,40 @@
+Research-Only License
+
+Copyright (c) 2025 Laura Vochita
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. DEFINITIONS
+   "Software" refers to the fairness-aware job matching framework, including but not limited to the bias detection methodology, statistical analysis techniques, VAE architectures, and counterfactual analysis methods.
+   
+   "Proprietary Components" refers to any job-matching system components, embedding models, or search implementations that are not part of this open framework.
+
+2. GRANT OF LICENSE
+   Subject to the terms and conditions of this License, the copyright holder hereby grants you a limited, non-exclusive, non-transferable license to:
+   
+   a) Use, study, and modify the Software for research and academic purposes only
+   b) Adapt the framework methodology to other datasets and research contexts
+   c) Reproduce and distribute the Software in academic publications and research settings
+   d) Create derivative works based on the framework architecture and methodology for research purposes
+
+3. RESTRICTIONS
+   You may NOT:
+   a) Use the Software for any commercial purposes
+   b) Use, access, or distribute any Proprietary Components
+   c) Use the Software in production systems or commercial applications
+   d) Remove or modify this license notice
+   e) Use the Software for any purpose other than academic research
+
+4. ATTRIBUTION
+   Any use of the Software must include proper attribution to the original author and this repository.
+
+5. PROPRIETARY COMPONENTS DISCLAIMER
+   This Software integrates with proprietary job-matching system components that are NOT covered by this license. Access to these components requires separate licensing agreements. The framework methodology and architecture are available under this license, but full reproduction may require alternative implementations of the proprietary dependencies.
+
+6. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+7. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For commercial use or questions about licensing, please contact the author.
