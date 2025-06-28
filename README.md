@@ -185,6 +185,11 @@ This framework integrates with proprietary job-matching system components that a
 - **FAISS Integration**: Custom search implementation with proprietary optimizations
 - **Model Utilities**: Specialized serialization and inference components
 
+### External Frameworks
+- **FairWS**: Required for VAE components
+  ```bash
+  git clone https://github.com/huaishengzhu/FairWS.git
+
 **Academic Use**: The framework architecture, methodology, and analysis techniques can be adapted to other embedding-based matching systems for research purposes only.
 
 **Reproduction**: While the exact implementation requires proprietary components, the statistical methods, model architectures, and bias detection techniques can be applied to publicly available embeddings and datasets for research purposes only.
