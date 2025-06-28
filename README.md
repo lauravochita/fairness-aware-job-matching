@@ -7,6 +7,9 @@ A comprehensive framework detecting bias and enhancing fairness in job-matching 
 This framework provides a complete pipeline for analyzing and addressing gender bias in job-matching systems. The implementation demonstrates two components: gender inference modeling, and bias analysis with counterfactual manipulation. This work was developed as part of a Master's thesis investigating fairness in AI-powered recruitment systems.
 
 ## Framework Architecture
+![Framework Architecture](assets/framework_architecture.png)
+
+The framework consists of three main components:
 
 The framework consists of two main components:
 
@@ -243,6 +246,8 @@ GitHub: https://github.com/lauravochita/fairness-aware-job-matching
 
 Laura Vochita  
 GitHub: [@lauravochita](https://github.com/lauravochita)
+E-mail: laura.vochita@student.uva.nl
+
 
 ## License
 
