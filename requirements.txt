@@ -76,7 +76,7 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Data files (specific to your project)
+# Data files 
 *.npy
 *.csv
 *.jsonl
